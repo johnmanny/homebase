@@ -6,11 +6,11 @@ install: env
 
 env:
 	python3 -m venv env
-	$(INENV) pip3 install -r req.txt
+	$(INENV) pip3 install -r requirements.txt
 
 # make run for flask's debug setup unless turned off in config.py
 run: 	env
-	($(INENV) cd server; python flask_main.py) || true
+	($(INENV) cd homebase; python flask_main.py) || true
 
 test:	env
 	$(INENV) cd server; nosetests
